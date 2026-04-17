@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* High Density Theme Colors */
+  --color-qc-bg: #0f1113;
+  --color-qc-panel: #1a1d21;
+  --color-qc-border: #2d3239;
+  --color-qc-text-p: #e0e6ed;
+  --color-qc-text-s: #94a3b8;
+  --color-qc-accent: #3b82f6;
+  --color-qc-danger: #ef4444;
+  --color-qc-success: #22c55e;
+  --color-qc-warning: #f59e0b;
+}
+
+@layer base {
+  body {
+    @apply bg-qc-bg text-qc-text-p font-sans antialiased;
+  }
+}
+
+/* Custom Component Patterns from High Density */
+.badge {
+  @apply px-3 py-1 rounded font-bold text-[10px] uppercase tracking-wider;
+}
+
+.badge-id {
+  @apply bg-qc-border text-qc-text-s;
+}
+
+.badge-status-danger {
+  @apply bg-qc-danger/20 text-qc-danger border border-qc-danger/30;
+}
+
+.badge-status-success {
+  @apply bg-qc-success/20 text-qc-success border border-qc-success/30;
+}
+
+.report-table th {
+  @apply px-4 py-2 bg-qc-panel text-left text-[11px] font-medium text-qc-text-s uppercase tracking-wider border-b border-qc-border;
+}
+
+.report-table td {
+  @apply px-4 py-3 whitespace-normal text-[13px] border-b border-qc-border;
+}
+
+.status-chip {
+  @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-semibold;
+}
+
+.status-match {
+  @apply bg-qc-success/10 text-qc-success;
+}
+
+.status-error {
+  @apply bg-qc-danger/10 text-qc-danger;
+}
+
+.status-warning {
+  @apply bg-qc-warning/10 text-qc-warning;
+}
+
+.verdict-box {
+  @apply text-2xl font-extrabold px-5 py-2.5 border-2 rounded-lg text-center uppercase;
+}
+
+.card-preview-container {
+  @apply rounded-xl border border-white/10 shadow-2xl relative flex flex-col p-6;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.card-chip {
+  @apply rounded-md relative;
+  background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+}
+
+.card-number {
+  @apply font-mono text-xl tracking-[4px];
+}
